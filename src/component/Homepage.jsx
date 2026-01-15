@@ -17,7 +17,7 @@ function Homepage() {
     <div className="text-center mt-20 relative z-10 flex justify-center items-center flex-col">
       <div className="absolute top-55">
       <h1>Memory Game</h1>
-      <p className="braces">Tap to Play</p>
+      <p className="braces">Click & drag to see the magic ✨</p>
       <button id="play" onClick={() => navigate("/game")}>Play</button>
       </div>
       <section className="hero pricing-hero" data-block="pricing-hero">

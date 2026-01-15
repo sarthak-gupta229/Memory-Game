@@ -58,7 +58,7 @@ const MemoryGames = () => {
     setWon(false);
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  
   useEffect(() => {
     const totalCards = gridSize * gridSize;
     const pairCount = Math.floor(totalCards / 2);
