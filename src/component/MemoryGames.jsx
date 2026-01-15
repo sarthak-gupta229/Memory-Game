@@ -121,7 +121,7 @@ const MemoryGames = () => {
 
   return (
     <div
-      className="flex flex-col items-center min-h-screen relative py-40"
+      className="flex flex-col items-center min-h-screen relative py-40 "
       style={{ backgroundColor: darkMode ? "grey" : "#0E100F" }}
     >
       {/* <button className=" absolute top-8 right-8" >Dark Mode</button> */}

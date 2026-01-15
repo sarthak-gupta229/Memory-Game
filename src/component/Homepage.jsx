@@ -14,10 +14,12 @@ function Homepage() {
   }, []);
 
   return (
-    <div className="text-center mt-20 relative z-10">
+    <div className="text-center mt-20 relative z-10 flex justify-center items-center flex-col">
+      <div className="absolute top-50">
       <h1>Memory Game</h1>
       <p className="braces">Tap to Play</p>
       <button id="play" onClick={() => navigate("/game")}>Play</button>
+      </div>
       <section className="hero pricing-hero" data-block="pricing-hero">
         <div className="container">
           <div className="pricing-hero__content">
