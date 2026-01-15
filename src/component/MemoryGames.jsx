@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { confetti } from "@tsparticles/confetti";
 
 function DarkModeButton({ darkMode, setDarkMode }) {
   return (
@@ -119,6 +120,45 @@ const MemoryGames = () => {
     }
   }, [solved, cards]);
 
+  const shoot = () => {
+  const defaults = {
+    spread: 360,
+    ticks: 50,
+    gravity: 0,
+    decay: 0.94,
+    startVelocity: 30,
+    colors: ["#FFE400", "#FFBD00", "#E89400", "#FFCA6C", "#FDFFB8"],
+  };
+
+  confetti({
+    ...defaults,
+    particleCount: 80,
+    scalar: 1.2,
+    shapes: ["star"],
+  });
+
+  confetti({
+    ...defaults,
+    particleCount: 20,
+    scalar: 0.75,
+    shapes: ["circle"],
+  });
+};
+
+useEffect(() => {
+  if (!won) return;
+
+  shoot();
+    const t1= setTimeout(() => shoot({ spread: 180 }), 100);
+    const t2= setTimeout(() => shoot({ spread: 360 }), 200);
+
+  return () => {
+    clearTimeout(t1);
+    clearTimeout(t2);
+  };
+}, [won]);
+
+
   return (
     <div
       className="flex flex-col items-center min-h-screen relative py-40 "
@@ -203,7 +243,12 @@ const MemoryGames = () => {
 
       {/* reset/play Again */}
       <button
-        onClick={initializeGame}
+        onClick={() => {
+    setWon(false);
+    initializeGame();
+  }
+          
+        }
         className="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
       >
         {won ? "Play Again" : "Reset"}
