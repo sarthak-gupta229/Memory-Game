@@ -5,7 +5,7 @@ function DarkModeButton({ darkMode, setDarkMode }) {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="px-4 py-2 rounded transition-all duration-300 transform hover:scale-110 active:scale-95 absolute top-8 right-15"
+      className="px-4 py-2 text-2xl rounded transition-all duration-300 transform hover:scale-110 active:scale-95 absolute top-8 right-15"
       style={{
         backgroundColor: darkMode ? "#e5e7eb" : "#1f2937",
         color: darkMode ? "black" : "white",
@@ -132,7 +132,7 @@ const MemoryGames = () => {
       />
       <Link
         to="/"
-        className="text-2xl absolute top-8 left-8 px-4 py-2 rounded"
+        className="text-2xl absolute top-8 left-8 px-4 py-2 rounded hover:scale-105 transition-transform duration-300"
         style={{
           color: darkMode ? "black" : "white",
           backgroundColor: darkMode ? "#e5e7eb" : "#1f2937",
