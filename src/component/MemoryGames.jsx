@@ -172,7 +172,7 @@ useEffect(() => {
       />
       <Link
         to="/"
-        className="text-2xl absolute top-8 left-8 px-4 py-2 rounded hover:scale-105 transition-transform duration-300"
+        className="text-2xl absolute top-8 left-8 px-4 py-2 rounded hover:scale-105 transition-transform duration-300 mr-1`"
         style={{
           color: darkMode ? "black" : "white",
           backgroundColor: darkMode ? "#e5e7eb" : "#1f2937",
@@ -182,8 +182,11 @@ useEffect(() => {
         ⬅ Back to Home
       </Link>
       <h1
-        className="text-5xl font-bold text-center mb-6 text-white"
-        style={{ color: darkMode ? "black" : "white" }}
+        className=" font-bold text-center mb-6 text-white"
+        style={{ 
+          fontSize: "clamp(2rem, 5vw, 3rem)",
+          color: darkMode ? "black" : "white" 
+        }}
       >
         Memory Game
       </h1>
